@@ -1,0 +1,101 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+   font-size: 1.6rem;
+}
+
+:root {
+    font-size: 62.5%;
+    --color-p: #E1E1E6;
+    --color-a:#C4C4CC;
+    --color-a-hover:#fff;
+    --color-h1:#E1E1E6;
+}
+
+nav {
+    display: flex;
+    padding-right: 1.1rem;
+    align-items: center;
+    gap: 32.271px;
+    margin-top: 4.0rem;
+    margin-left: 7.2rem;
+}
+
+a {
+    color: var(--color-a);
+    font-family: Roboto;
+    font-size: 2.4rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 21.667px; 
+    text-decoration: none;
+    cursor: pointer;
+    margin-bottom: 2.0rem;
+}
+a:hover {
+    color: var(--color-a-hover);
+    transform: scale(1.05)
+}
+
+.main {
+    display: grid;
+    place-items: center;
+    text-align: center;
+    margin-top: 17.2rem;
+}
+    
+
+h1  {
+    font-family: "Roboto", sans-serif;
+    color: var(--color-h1);
+    font-size: 4.8rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 125%; 
+}
+
+button {
+    text-align: center;
+    font-size: 1.4rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 2.4rem; 
+    padding: 1.2rem 3.2rem;
+    justify-content: center;
+    align-items: center;
+    gap: .8rem;
+    border-radius: .5rem;
+    border: .2rem solid #FFF;
+    background-color: transparent;
+    color: var(--color-a-hover);
+    margin-top: 2.4rem;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--color-a-hover);
+    color: rgb(12, 34, 34);
+    transform: scale(1.05)
+}
+.explore {
+    padding: 60px;          /* Espaço interno */
+    margin-top: 11.2rem;   /* Espaço acima */
+    margin-left: 20px;     /* Espaço à esquerda */
+    margin-right: 20px;    /* Espaço à direita */
+}
+
+.explore p {
+    color: var(--color-p);
+    font-family: "Roboto", sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 160%; 
+    width: 64.8rem;
+    margin-top: 1.6rem;
+}
+ 

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universe</title>
+    <link rel="stylesheet" href="style.css">
+    
+<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+    <nav>
+        <span><img src="./assets/Vector.svg" alt=""></span>
+        <a href="/home" onclick="route(event)">Home</a>
+        <a href="/universo" onclick="route(event)">O universo</a>
+        <a href="/exploration" onclick="route(event)">Exploração</a>
+    </nav>
+
+    <div class="main" id="main-content">
+        <h1>Explore o universo</h1>
+        <button onclick="window.open('https://www.bbc.com/portuguese/geral-44527107', '_blank')">
+            
+            QUERO SABER MAIS
+        </button>
+    </div>
+
+    <div id="app"></div>
+
+    <script>
+        const routes = {
+            "/universo": "/pages/universo.html",
+            "/exploration": "/pages/exploration.html",
+            "/home": "/pages/home.html",
+        };
+
+        function route(event) {
+            event.preventDefault();
+            window.history.pushState({}, "", event.target.href);
+            handle();
+        }
+
+        function handle() {
+            const { pathname } = window.location;
+            const route = routes[pathname] || routes['/exploration'];
+
+            const mainContent = document.getElementById('main-content');
+            if (pathname === '/home') {
+                mainContent.style.display = 'block'; // Mostra a div na página Home
+            } else {
+                mainContent.style.display = 'none'; // Oculta a div nas outras páginas
+            }
+
+            fetch(route)
+            .then(data => data.text())
+            .then(html => {
+                document.querySelector('#app').innerHTML = html;
+            });
+        }
+
+        // Inicializa a exibição correta ao carregar a página
+        handle();
+    </script>
+    
+</body>
+</html>
